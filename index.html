@@ -9,79 +9,105 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="format-detection" content="telephone=no">
   <style type="text/css">
-/* Document Style 
-    * { font-family: sans-serif; box-sizing: border-box; }
-    body { background: #eaeaea; }
-    section { padding: 15px; max-width: 750px; margin: 30px auto; box-shadow: rgba(0,0,0,.15) 0 10px 50px; background: #fff; }
-    h1 { margin: 30px auto 10px auto; text-align: center; font-size: 36pt; }
-    h2 { margin: 0 0 10px 0; text-align: center; font-size: 24pt; }
-    div { display: inline-block; position: relative; margin: 10px; }
-    div:before { display: inline-block; position: absolute; top: -40px; left: 50%; height: 30px; background: #000; content: attr(data-name); color: #fff; font-size: 10pt; padding: 0 15px; line-height: 30px; text-align: center; white-spaaace: nowrap; opacity: 0; transition: all .2s ease-in-out; pointer-events: none; }
-    div:after { content: ''; border-top: 10px solid #000; border-right: 10px solid transparent; position: absolute; left: 50%; top: -10px; opacity: 0; transition: all .2s ease-in-out; pointer-events: none; }
-    div:hover:before, div:hover:after { opacity: 1;}
-    .unicon { font-size: 24pt; text-shadow: #eaeaea 1px 2px 2px; }
-*/
-
-/* Solarized Dark style */
-    * { font-family: sans-serif; box-sizing: border-box !important; }
+    * {
+      font-family: sans-serif;
+      box-sizing: border-box;
+    }
     body { 
-      background: #073642;
+      background: #eaeaea;
+      padding: 0 15px;
     }
     h1, h2 {
       width: 100%;
-      float: left;
-      color: #268bd2;
-      text-shadow: #002b36 2px 2px 5px;
+      color: #333;
       text-align: center;
+      font-weight: 200;
+      margin: 0;
+    }
+    h1 {
+      margin: 30px 0 0 0;
     }
     section {
-      margin; 15px auto;
-      margin-left: 15px;
-      margin-right: 15px;
+      margin: 15px auto;
+      background: #fff;
+      padding: 15px;
+      width: 100%;
+      max-width: 750px;
+      position: relative
     }
-    a {
+    section.intro h2 {
+      text-align: left;
+      margin: 15px 0 5px 0;
+    }
+    section.intro p {
+      margin: 5px 0 5px 0;
+      font-size: 11pt;
+      line-height: 16pt;
+    }
+    section.intro code {
+      background: #eaeaea;
+      border: 1px solid #cdcdcd;
+      border-radius: 3px;
+      padding: 3px;
+      display: inline-block;
+      font-family: 'Andale Mono', 'Menlo', 'Andale Mono', Consolas, monospace;
+      font-size: 10pt;
+    }
+    section.demo > a {
       width: 50px;
       height: 50px;
       text-align: center;
       float: left;
-      color: #2aa198;
+      color: #555;
       font-size: 24pt;
       overflow: visible;
       position: relative;
       cursor: -webkit-zoom-in;
     }
-    a span {
+    section.demo:after {
+      content: '';
+      clear: both;
+      display: block;
+    }
+    section.demo:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      border-bottom: 40px solid #eaeaea;
+      border-left: 40px solid #fff;
+    }
+    section.demo > a > span {
       width: 50px;
       height: 50px;
       line-height: 50px;
-      background: #073642;
+      background: #fff;
       border: 2px solid transparent;
       position: relative;
-      text-shadow: #002b36 2px 2px 2px;
       top: auto;
       left: auto;
       margin: 0;
     }
-    a:hover span {
+    section.demo > a:hover > span {
       width: 100px;
       height: 100px;
-      background: #93a1a1;
-      color: #002b36;
+      background: #fff;
+      color: #000;
       text-shadow: none;
       font-size: 48pt;
       line-height: 100px;
       z-index: 500;
       top: -45px;
       left: -25px;
-      border: 2px solid #002b36;
+      border: 2px solid #000;
     }
-    a:after {
+    section.demo > a:after {
       display: block;
       width: 90px;
       min-height: 15px;
-      background: #002b36;
+      background: #000;
       content: attr(data-name);
-      color: #93a1a1;
+      color: #fff;
       font-size: 8pt;
       opacity: 0;
       position: absolute;
@@ -90,15 +116,41 @@
       padding: 5px;
       pointer-events: none;
     }
-    a:hover:after {
+    section.demo > a:hover:after {
       opacity: 1;
       z-index: 700;
+    }
+    section.footer {
+      text-align: center;
+      color: #555;
+      background: transparent;
+    }
+    section.footer a {
+      color: #333;
+      text-decoration: none;
+    }
+    section.footer a:hover {
+      color: #777;
     }
   </style>
 </head>
 <body>
   <h1>Unicons</h1>
-  <section>
+  <section class="intro">
+    <p>Unicons.css is a lightweight supplement or replacement for icon fonts like FontAwesome, as well as a semantic way to add unicode characters to your HTML markup.</p>
+    <p>It contains character codes for some of the hard-to-reach but useful characters buried deep within your font and giving us an easy way to select those using custom data attributes in HTML. This keeps your markup semantic and easy to edit, and lets you leverage many icons that may be installed on your target devices already without loading additional resources.</p>
+    <p>FontAwesome and other web-geared icon fonts are designed with icons for web applications, but the unicode standard which unicons.css supports includes general purpose pictograms that can also be useful in web applications as well as valuable mathematical, scientific, and international symbols that seem largely absent from websites today.</p>
+
+    <h2>How to install Unicons</h2>
+    <code>&lt;link href="unicons.css" type="text/css" rel="stylesheet"&gt;</code>
+    
+    <h2>How to add Unicons into your HTML Markup</h2>
+    <p>You can add Unicons to your HTML markup by applying the data-unicon HTML custom data attribute to any element, like the <span> element, by adding the name of the unicode character you want to insert as the attribute value. All names are written in lowercase letters with the spaces delimited by hyphens (-).</p>
+    <code>&lt;span data-unicon="black-heart-suit"&gt;&lt;/span&gt;</code>
+    <p>The above HTML code would insert the '♥' character.</p>
+  </section>
+  <h1>Unicon Name Reference</h1>
+  <section class="demo">
     <h2>Arrows</h2>
     <a href="#" onclick="return false" data-name="upwards-arrow">
       <span data-unicon="upwards-arrow"></span>
@@ -191,7 +243,7 @@
       <span data-unicon="bottom-arc-anticlockwise-arrow"></span>
     </a>
   </section>
-  <section>
+  <section class="demo">
     <h2>Letterlike Symbols</h2>
     <a href="#" onclick="return false" data-name="copyright-sign">
       <span data-unicon="copyright-sign"></span>
@@ -350,7 +402,7 @@
       <span data-unicon="square-ph"></span>
     </a>
   </section>
-  <section>
+  <section class="demo">
     <h2>Math Symbols &amp; Numerals</h2>
     <a href="#" onclick="return false" data-name="plus-sign">
       <span data-unicon="plus-sign"></span>
@@ -590,7 +642,7 @@
       <span data-unicon="old-italic-numeral-fifty"></span>
     </a>
   </section>
-  <section>
+  <section class="demo">
     <h2>Currency Symbols</h2>
     <a href="#" onclick="return false" data-name="dollar-sign">
       <span data-unicon="dollar-sign"></span>
@@ -701,7 +753,7 @@
       <span data-unicon="spesmilo-sign"></span>
     </a>
   </section>
-  <section>
+  <section class="demo">
     <h2>Pictograms</h2>
     <a href="#" onclick="return false" data-name="writing-hand">
       <span data-unicon="writing-hand"></span>
@@ -779,7 +831,7 @@
       <span data-unicon="anchor"></span>
     </a>
   </section>
-  <section>
+  <section class="demo">
     <h2>Game Icons</h2>
     <a href="#" onclick="return false" data-name="die-face-1">
       <span data-unicon="die-face-1"></span>
@@ -866,7 +918,7 @@
       <span data-unicon="white-chess-pawn"></span>
     </a>
   </section>
-  <section>
+  <section class="demo">
     <h2>Bullets &amp; Stars</h2>
     <a href="#" onclick="return false" data-name="bullet-operator">
       <span data-unicon="bullet-operator"></span>
@@ -992,7 +1044,7 @@
       <span data-unicon="white-florette"></span>
     </a>
   </section>
-  <section>
+  <section class="demo">
     <h2>Punctuation</h2>
     <a href="#" onclick="return false" data-name="inverted-exclamation-mark">
       <span data-unicon="inverted-exclamation-mark"></span>
@@ -1031,7 +1083,7 @@
       <span data-unicon="asterism"></span>
     </a>
   </section>
-  <section>
+  <section class="demo">
     <h2>Signs & Symbols</h2>
     <a href="#" onclick="return false" data-name="telephone-location-sign">
       <span data-unicon="telephone-location-sign"></span>
@@ -1076,7 +1128,7 @@
       <span data-unicon="partially-recycled-paper-symbol"></span>
     </a>
   </section>
-  <section>
+  <section class="demo">
     <h2>Technical Symbols</h2>
     <a href="#" onclick="return false" data-name="place-of-interest-sign">
       <span data-unicon="place-of-interest-sign"></span>
@@ -1117,6 +1169,9 @@
     <a href="#" onclick="return false" data-name="clear-screen-symbol">
       <span data-unicon="clear-screen-symbol"></span>
     </a>
+  </section>
+  <section class="footer">
+    authored by <a href="http://twitter.com/innovati" title="Hit me up on Twitter">@innovati</a> <span data-unicon="bullet"></span> hosted on <a href="https://gihub.com/tomhodgins/unicons" title="View Unicons on Github">github</a>
   </section>
 </body>
 </html>
