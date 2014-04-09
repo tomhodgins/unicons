@@ -10,120 +10,121 @@
   <meta name="format-detection" content="telephone=no">
   <style type="text/css">
     * {
-      font-family: sans-serif;
       box-sizing: border-box;
+      font-family: sans-serif;
     }
-    body { 
-      background: #eaeaea;
+    body {
       padding: 0 15px;
+      background: #eaeaea;
     }
     h1, h2 {
+      margin: 0;
       width: 100%;
       color: #333;
       text-align: center;
       font-weight: 200;
-      margin: 0;
     }
     h1 {
       margin: 30px 0 0 0;
     }
     section {
+      position: relative;
       margin: 15px auto;
-      background: #fff;
       padding: 15px;
-      width: 100%;
       max-width: 750px;
-      position: relative
+      width: 100%;
+      background: #fff;
     }
     section.intro h2 {
-      text-align: left;
       margin: 15px 0 5px 0;
+      text-align: left;
     }
     section.intro p {
-      margin: 5px 0 5px 0;
+      margin: 10px 0;
       font-size: 11pt;
       line-height: 16pt;
     }
     section.intro code {
-      background: #eaeaea;
+      display: inline-block;
+      padding: 3px;
       border: 1px solid #cdcdcd;
       border-radius: 3px;
-      padding: 3px;
-      display: inline-block;
-      font-family: 'Andale Mono', 'Menlo', 'Andale Mono', Consolas, monospace;
+      background: #eaeaea;
       font-size: 10pt;
+      line-height: 10pt;
+      font-family: 'Andale Mono', 'Menlo', 'Andale Mono', Consolas, monospace !important;
     }
     section.demo > a {
+      position: relative;
+      float: left;
+      overflow: visible;
       width: 50px;
       height: 50px;
-      text-align: center;
-      float: left;
       color: #555;
+      text-align: center;
       font-size: 24pt;
-      overflow: visible;
-      position: relative;
       cursor: -webkit-zoom-in;
     }
     section.demo:after {
-      content: '';
-      clear: both;
       display: block;
+      clear: both;
+      content: '';
     }
     section.demo:before {
-      content: '';
       position: absolute;
-      bottom: 0;
       right: 0;
+      bottom: 0;
       border-bottom: 40px solid #eaeaea;
       border-left: 40px solid #fff;
+      content: '';
     }
     section.demo > a > span {
-      width: 50px;
-      height: 50px;
-      line-height: 50px;
-      background: #fff;
-      border: 2px solid transparent;
       position: relative;
       top: auto;
       left: auto;
       margin: 0;
+      width: 50px;
+      height: 50px;
+      border: 2px solid transparent;
+      background: #fff;
+      line-height: 50px;
     }
     section.demo > a:hover > span {
+      top: -45px;
+      left: -25px;
+      z-index: 500;
       width: 100px;
       height: 100px;
+      border: 2px solid #000;
       background: #fff;
       color: #000;
       text-shadow: none;
       font-size: 48pt;
       line-height: 100px;
-      z-index: 500;
-      top: -45px;
-      left: -25px;
-      border: 2px solid #000;
     }
     section.demo > a:after {
-      display: block;
-      width: 90px;
-      min-height: 15px;
-      background: #000;
-      content: attr(data-name);
-      color: #fff;
-      font-size: 8pt;
-      opacity: 0;
       position: absolute;
       top: 55px;
       left: -25px;
+      display: block;
       padding: 5px;
+      min-height: 15px;
+      width: 90px;
+      background: #000;
+      color: #fff;
+      content: attr(data-name);
+      font-size: 8pt;
+      opacity: 0;
       pointer-events: none;
     }
     section.demo > a:hover:after {
-      opacity: 1;
       z-index: 700;
+      opacity: 1;
     }
     section.footer {
-      text-align: center;
-      color: #555;
       background: transparent;
+      color: #555;
+      text-align: center;
     }
     section.footer a {
       color: #333;
@@ -142,11 +143,11 @@
     <p>FontAwesome and other web-geared icon fonts are designed with icons for web applications, but the unicode standard which unicons.css supports includes general purpose pictograms that can also be useful in web applications as well as valuable mathematical, scientific, and international symbols that seem largely absent from websites today.</p>
 
     <h2>How to install Unicons</h2>
-    <code>&lt;link href="unicons.css" type="text/css" rel="stylesheet"&gt;</code>
-    
+    <p><code>&lt;link href="unicons.css" type="text/css" rel="stylesheet"&gt;</code></p>
+
     <h2>How to add Unicons into your HTML Markup</h2>
-    <p>You can add Unicons to your HTML markup by applying the data-unicon HTML custom data attribute to any element, like the <span> element, by adding the name of the unicode character you want to insert as the attribute value. All names are written in lowercase letters with the spaces delimited by hyphens (-).</p>
-    <code>&lt;span data-unicon="black-heart-suit"&gt;&lt;/span&gt;</code>
+    <p>You can add Unicons to your HTML markup by applying the data-unicon HTML custom data attribute to any element, like the <code>&lt;span&gt;</code> element, by adding the name of the unicode character you want to insert as the attribute value. All names are written in lowercase letters with the spaces delimited by hyphens (-).</p>
+    <p><code>&lt;span data-unicon="black-heart-suit"&gt;&lt;/span&gt;</code></p>
     <p>The above HTML code would insert the '♥' character.</p>
   </section>
   <h1>Unicon Name Reference</h1>
@@ -1084,7 +1085,7 @@
     </a>
   </section>
   <section class="demo">
-    <h2>Signs & Symbols</h2>
+    <h2>Signs &amp; Symbols</h2>
     <a href="#" onclick="return false" data-name="telephone-location-sign">
       <span data-unicon="telephone-location-sign"></span>
     </a>

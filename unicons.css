@@ -1,5 +1,5 @@
 /* unicons.css - Unicode Icons */
-[data-unicon] { font-family: "Apple Symbols", sans-serif; display: inline-block; font-style: normal; font-weight: normal; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+[data-unicon] { display: inline-block; font-weight: normal; font-style: normal; font-family: "Apple Symbols", sans-serif; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 /* Arrows */
 [data-unicon="upwards-arrow"]:before { content: '\2191'; }
